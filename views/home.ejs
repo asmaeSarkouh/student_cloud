@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <form action="/add" method="post">
+        <div>
+            <label for="">code</label>
+            <input type="text" name="code">
+        </div><br>
+        <div>
+            <label for="">nom</label>
+            <input type="text" name="name">
+        </div><br>
+        <div>
+            <label for="">category</label>
+            <input type="text" name="category">
+        </div><br>
+        <div>
+            <label for="">prix</label>
+            <input type="text" name="prix">
+        </div><br>
+        <input type="submit" value="envoyer">
+    </form>
+    
+    <h1>List des produits</h1>
+    <table border="">
+        <thead>
+            <tr>
+                <th>code</th>
+                <th>name</th>
+                <th>category</th>
+                <th>prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i=0; i< produit.length; i++){ %>
+                <tr>
+                    <td>
+                        <%=produit[i].code %>
+                    </td>
+                    <td>
+                        <%=produit[i].name %>
+                    </td>
+                    <td>
+                        <%=produit[i].category %>
+                    </td>
+                    <td>
+                        <%=produit[i].prix %>
+                    </td>
+                    <td>
+                        <a href="/del/<%=produit[i].code%>">delete</a>
+                    </td>
+                    <td>
+                        <a href="/editS/<%=produit[i].code%>">edit</a>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
+<!-- extention pour ejs:ejs language support -->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title %>
+    </title>
+</head>
+
+<body>
+    <h1>edication formulare</h1>
+    <form action="/editS" method="post">
+        <div>
+            <label for="">code</label>
+            <input type="text" readonly name="code" value="<%=produit.code %>">
+        </div><br>
+        <div>
+            <label for="">nom</label>
+            <input type="text" name="nom" value="<%=produit.name %>">
+        </div><br>
+        <div>
+            <label for="">prenom</label>
+            <input type="text" name="prenom" value="<%=produit.category %>">
+        </div><br>
+        <div>
+            <label for="">classe</label>
+            <input type="text" name="classe" value="<%=produit.prix %>">
+        </div><br>
+        <input type="submit" value="envoyer">
+    </form>
+</body>
+
+</html>
+<!-- extention pour ejs:ejs language support -->
